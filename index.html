@@ -1,14 +1,97 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzaria Sabor da Itália</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #b22222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+.categoria {
+    margin-bottom: 30px;
+}
+
+.categoria h2 {
+    border-bottom: 2px solid #b22222;
+    padding-bottom: 5px;
+    color: #b22222;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
 </head>
 
 <body>
-  
-</body>
 
+<header>
+    <h1>🍕 Pizzaria Sabor da Itália</h1>
+    <p>O melhor sabor da cidade!</p>
+</header>
+
+<div class="container">
+
+    <div class="categoria">
+        <h2>Pizzas Tradicionais</h2>
+        <div class="item"><span>Calabresa</span><span>R$ 35,00</span></div>
+        <div class="item"><span>Mussarela</span><span>R$ 30,00</span></div>
+        <div class="item"><span>Portuguesa</span><span>R$ 40,00</span></div>
+        <div class="item"><span>Frango com Catupiry</span><span>R$ 42,00</span></div>
+    </div>
+
+    <div class="categoria">
+        <h2>Pizzas Especiais</h2>
+        <div class="item"><span>4 Queijos</span><span>R$ 45,00</span></div>
+        <div class="item"><span>Carne de Sol</span><span>R$ 48,00</span></div>
+        <div class="item"><span>Camarão</span><span>R$ 55,00</span></div>
+    </div>
+
+    <div class="categoria">
+        <h2>Bebidas</h2>
+        <div class="item"><span>Refrigerante 2L</span><span>R$ 12,00</span></div>
+        <div class="item"><span>Suco Natural</span><span>R$ 8,00</span></div>
+        <div class="item"><span>Água</span><span>R$ 4,00</span></div>
+    </div>
+
+</div>
+
+<footer>
+    📍 Rua Exemplo, 123 - Sua Cidade | 📞 (99) 99999-9999
+</footer>
+
+</body>
 </html>
