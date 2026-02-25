@@ -3,95 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pizzaria Sabor da Itália</title>
+<title>Pizzaria Sabor Supremo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f8f8f8;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-header {
-    background-color: #b22222;
-    color: white;
-    text-align: center;
-    padding: 20px;
+body{
+    background:#f5f5f5;
 }
 
-h1 {
-    margin: 0;
+header{
+    background:linear-gradient(135deg,#ff0000,#b30000);
+    color:white;
+    text-align:center;
+    padding:30px 20px;
 }
 
-.container {
-    padding: 20px;
+header h1{
+    font-size:28px;
 }
 
-.categoria {
-    margin-bottom: 30px;
+.banner{
+    background:url('https://images.unsplash.com/photo-1601924582975-7e6f7cfc3a07') center/cover;
+    height:200px;
 }
 
-.categoria h2 {
-    border-bottom: 2px solid #b22222;
-    padding-bottom: 5px;
-    color: #b22222;
+.container{
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-.item {
-    display: flex;
-    justify-content: space-between;
-    margin: 8px 0;
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
 
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 15px;
+.card:hover{
+    transform:translateY(-5px);
 }
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card-content h3{
+    margin-bottom:5px;
+}
+
+.price{
+    color:#ff0000;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#25D366;
+    color:white;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#1ebe5d;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    color:white;
+    margin-top:20px;
+}
+
 </style>
 </head>
-
 <body>
 
 <header>
-    <h1>🍕 Pizzaria Sabor da Itália</h1>
-    <p>O melhor sabor da cidade!</p>
+    <h1>🍕 Pizzaria Sabor Supremo</h1>
+    <p>Peça agora mesmo pelo WhatsApp!</p>
 </header>
+
+<div class="banner"></div>
 
 <div class="container">
 
-    <div class="categoria">
-        <h2>Pizzas Tradicionais</h2>
-        <div class="item"><span>Calabresa</span><span>R$ 35,00</span></div>
-        <div class="item"><span>Mussarela</span><span>R$ 30,00</span></div>
-        <div class="item"><span>Portuguesa</span><span>R$ 40,00</span></div>
-        <div class="item"><span>Frango com Catupiry</span><span>R$ 42,00</span></div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65">
+        <div class="card-content">
+            <h3>Calabresa Especial</h3>
+            <p>Molho, mussarela e calabresa premium.</p>
+            <div class="price">R$ 39,90</div>
+            <button onclick="pedir('Calabresa Especial')">Pedir no WhatsApp</button>
+        </div>
     </div>
 
-    <div class="categoria">
-        <h2>Pizzas Especiais</h2>
-        <div class="item"><span>4 Queijos</span><span>R$ 45,00</span></div>
-        <div class="item"><span>Carne de Sol</span><span>R$ 48,00</span></div>
-        <div class="item"><span>Camarão</span><span>R$ 55,00</span></div>
+    <div class="card">
+        <img src="https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_mobile/public/srh_recipes/d036cd01122da62bf581784f52d99b3a.webp?itok=ztEgTXHG">
+        <div class="card-content">
+            <h3>4 Queijos</h3>
+            <p>Mussarela, parmesão, provolone e gorgonzola.</p>
+            <div class="price">R$ 44,90</div>
+            <button onclick="pedir('4 Queijos')">Pedir no WhatsApp</button>
+        </div>
     </div>
 
-    <div class="categoria">
-        <h2>Bebidas</h2>
-        <div class="item"><span>Refrigerante 2L</span><span>R$ 12,00</span></div>
-        <div class="item"><span>Suco Natural</span><span>R$ 8,00</span></div>
-        <div class="item"><span>Água</span><span>R$ 4,00</span></div>
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVy3B284W0oKBTD8dzl7fxz9hCeDUgoYQpxCZYroeJzblvDn5i5x8qaXAM&s=10">
+        <div class="card-content">
+            <h3>Frango com Catupiry</h3>
+            <p>Frango desfiado e catupiry cremoso.</p>
+            <div class="price">R$ 42,90</div>
+            <button onclick="pedir('Frango com Catupiry')">Pedir no WhatsApp</button>
+        </div>
     </div>
 
 </div>
 
 <footer>
-    📍 Rua Exemplo, 123 - Sua Cidade | 📞 (99) 99999-9999
+📍 Rua Principal, 123 - Sua Cidade  
+<br>📞 (99) 99999-9999  
 </footer>
+
+<script>
+function pedir(sabor){
+    let numero = "5599984591017"; // COLOQUE SEU NÚMERO AQUI
+    let mensagem = `Olá! Quero pedir a pizza ${sabor}`;
+    let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
+}
+</script>
 
 </body>
 </html>
