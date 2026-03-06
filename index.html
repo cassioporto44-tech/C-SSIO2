@@ -10,152 +10,380 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Poppins', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#f5f5f5;
+background:#f5f5f5;
 }
+
+/* HEADER */
 
 header{
-    background:linear-gradient(135deg,#ff0000,#b30000);
-    color:white;
-    text-align:center;
-    padding:30px 20px;
-}
-
-header h1{
-    font-size:28px;
+background:linear-gradient(135deg,#ff0000,#b30000);
+color:white;
+text-align:center;
+padding:25px;
 }
 
 .banner{
-    background:url('https://images.unsplash.com/photo-1601924582975-7e6f7cfc3a07') center/cover;
-    height:200px;
+background:url('https://images.unsplash.com/photo-1601924582975-7e6f7cfc3a07') center/cover;
+height:200px;
 }
 
+/* MENU */
+
 .container{
-    padding:20px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
+width:100%;
+height:180px;
+object-fit:cover;
 }
 
 .card-content{
-    padding:15px;
-}
-
-.card-content h3{
-    margin-bottom:5px;
+padding:15px;
 }
 
 .price{
-    color:#ff0000;
-    font-weight:bold;
-    margin:10px 0;
+color:#ff0000;
+font-weight:bold;
+margin:10px 0;
 }
 
-button{
-    width:100%;
-    padding:10px;
-    border:none;
-    background:#25D366;
-    color:white;
-    font-weight:bold;
-    border-radius:8px;
-    cursor:pointer;
-    transition:0.3s;
+.add-btn{
+background:#25D366;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
 }
 
-button:hover{
-    background:#1ebe5d;
+/* CARRINHO */
+
+.cart{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+}
+
+.qtd-btn{
+background:#ddd;
+border:none;
+padding:5px 10px;
+cursor:pointer;
+}
+
+.total{
+font-size:20px;
+font-weight:bold;
+margin-top:10px;
+}
+
+/* INPUTS */
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+/* BOTÃO FINALIZAR */
+
+.finalizar{
+background:#ff0000;
+color:white;
+border:none;
+padding:12px;
+margin-top:15px;
+width:100%;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* MODAL PIX */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+
+.modal-box{
+background:white;
+padding:20px;
+border-radius:10px;
+text-align:center;
+width:300px;
+}
+
+.copy-btn{
+background:#25D366;
+color:white;
+border:none;
+padding:10px;
+margin-top:10px;
+width:100%;
+border-radius:6px;
+cursor:pointer;
 }
 
 footer{
-    text-align:center;
-    padding:20px;
-    background:#111;
-    color:white;
-    margin-top:20px;
+text-align:center;
+padding:20px;
+background:#111;
+color:white;
+margin-top:20px;
 }
 
 </style>
 </head>
+
 <body>
 
 <header>
-    <h1>🍕 Pizzaria Sabor Supremo</h1>
-    <p>Peça agora mesmo pelo WhatsApp!</p>
+<h1>🍕 Pizzaria Sabor Supremo</h1>
+<p>Monte seu pedido</p>
 </header>
 
 <div class="banner"></div>
 
 <div class="container">
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65">
-        <div class="card-content">
-            <h3>Calabresa Especial</h3>
-            <p>Molho, mussarela e calabresa premium.</p>
-            <div class="price">R$ 1129,90</div>
-            <button onclick="pedir('Calabresa Especial')">Pedir no WhatsApp</button>
-        </div>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65">
+<div class="card-content">
+<h3>Calabresa Especial</h3>
+<p>Molho, mussarela e calabresa premium</p>
+<div class="price">R$ 39,90</div>
+<button class="add-btn" onclick="add('Calabresa Especial',39.90)">Adicionar</button>
+</div>
+</div>
 
-    <div class="card">
-        <img src="https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_mobile/public/srh_recipes/d036cd01122da62bf581784f52d99b3a.webp?itok=ztEgTXHG">
-        <div class="card-content">
-            <h3>🤤4 Queijos</h3>
-            <p>Mussarela, parmesão, provolone e gorgonzola.</p>
-            <div class="price">R$ 40,00</div>
-            <button onclick="pedir('4 Queijos')">Pedir no WhatsApp</button>
-        </div>
-    </div>
+<div class="card">
+<img src="https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_mobile/public/srh_recipes/d036cd01122da62bf581784f52d99b3a.webp">
+<div class="card-content">
+<h3>4 Queijos</h3>
+<p>Mussarela, parmesão, provolone e gorgonzola</p>
+<div class="price">R$ 40,00</div>
+<button class="add-btn" onclick="add('4 Queijos',40)">Adicionar</button>
+</div>
+</div>
 
-    <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVy3B284W0oKBTD8dzl7fxz9hCeDUgoYQpxCZYroeJzblvDn5i5x8qaXAM&s=10">
-        <div class="card-content">
-            <h3>Frango com Catupiry</h3>
-            <p>Frango desfiado e catupiry cremoso.</p>
-            <div class="price">R$ 510,00</div>
-            <button onclick="pedir('Frango com Catupiry')">Pedir no WhatsApp</button>
-        </div>
-    </div>
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVy3B284W0oKBTD8dzl7fxz9hCeDUgoYQpxCZYroeJzblvDn5i5x8qaXAM">
+<div class="card-content">
+<h3>Frango com Catupiry</h3>
+<p>Frango desfiado com catupiry</p>
+<div class="price">R$ 42,00</div>
+<button class="add-btn" onclick="add('Frango Catupiry',42)">Adicionar</button>
+</div>
+</div>
+
+</div>
+
+<div class="cart">
+
+<h2>🛒 Carrinho</h2>
+
+<div id="cart"></div>
+
+<div class="total">
+Total: R$ <span id="total">0.00</span>
+</div>
+
+<input id="nome" placeholder="Seu nome">
+<input id="endereco" placeholder="Seu endereço">
+
+<button class="finalizar" onclick="abrirPix()">Finalizar Pedido</button>
+
+</div>
+
+<div class="modal" id="pixModal">
+
+<div class="modal-box">
+
+<h3>Pagamento via PIX</h3>
+
+<input id="pixKey" value="SEU-PIX-AQUI" readonly>
+
+<button class="copy-btn" onclick="copiarPix()">Copiar PIX</button>
+
+</div>
 
 </div>
 
 <footer>
-    📍Tabaroa, 10 - Paraibano 
-<br> (99)98459-1017  
+📍 Tabaroa - Paraibano  
+<br> 📞 (99)98459-1017
 </footer>
 
 <script>
-function pedir(sabor){
-    let numero = "5599984591017"; // COLOQUE SEU NÚMERO AQUI
-    let mensagem = `Olá! Quero pedir a pizza ${sabor}`;
-    let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, '_blank');
+
+let cart=[];
+
+function add(nome,preco){
+
+let item=cart.find(i=>i.nome===nome);
+
+if(item){
+item.qtd++;
+}else{
+cart.push({nome,preco,qtd:1});
 }
+
+render();
+
+}
+
+function render(){
+
+let html="";
+let total=0;
+
+cart.forEach((item,index)=>{
+
+html+=`
+<div class="cart-item">
+
+${item.nome} (${item.qtd})
+
+<div>
+
+<button class="qtd-btn" onclick="menos(${index})">-</button>
+
+<button class="qtd-btn" onclick="mais(${index})">+</button>
+
+</div>
+
+</div>
+`;
+
+total+=item.preco*item.qtd;
+
+});
+
+document.getElementById("cart").innerHTML=html;
+document.getElementById("total").innerText=total.toFixed(2);
+
+}
+
+function mais(i){
+
+cart[i].qtd++;
+render();
+
+}
+
+function menos(i){
+
+cart[i].qtd--;
+
+if(cart[i].qtd<=0){
+
+cart.splice(i,1);
+
+}
+
+render();
+
+}
+
+function abrirPix(){
+
+let nome=document.getElementById("nome").value;
+let endereco=document.getElementById("endereco").value;
+
+if(nome==""||endereco==""){
+
+alert("Preencha nome e endereço");
+
+return;
+
+}
+
+document.getElementById("pixModal").style.display="flex";
+
+}
+
+function copiarPix(){
+
+let pix=document.getElementById("pixKey");
+
+pix.select();
+
+document.execCommand("copy");
+
+enviarPedido();
+
+}
+
+function enviarPedido(){
+
+let nome=document.getElementById("nome").value;
+let endereco=document.getElementById("endereco").value;
+
+let msg="🍕 *Novo Pedido* \n\n";
+
+msg+="👤 Cliente: "+nome+"\n";
+msg+="📍 Endereço: "+endereco+"\n\n";
+
+let total=0;
+
+cart.forEach(item=>{
+
+msg+=`• ${item.nome} (${item.qtd})\n`;
+
+total+=item.preco*item.qtd;
+
+});
+
+msg+=`\n💰 Total: R$ ${total.toFixed(2)}`;
+
+let numero="5599984591017";
+
+let url=`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+
+window.open(url,"_blank");
+
+}
+
 </script>
 
 </body>
